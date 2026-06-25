@@ -186,7 +186,7 @@ def make_figure_3_3d_rg_manifold(N=100, steps=60):
             
             w_eff = (-(np.log(rho_scaled / rho_base) / np.log(a_scale)) / 3.0) - 1.0
             
-            # FIXED: Isolate the fundamental scalar spectral gap eigenvalue mode (index 1)
+            # FIXED: Isolates the structural non-zero scalar spectral gap mode to resolve the broadcasting error
             results[top]["x_lambda"].append(eigenvals[1])
             results[top]["y_weff"].append(w_eff)
             results[top]["z_ds"].append(compute_peak_spectral_dimension(eigenvals))
@@ -210,7 +210,7 @@ def make_figure_3_3d_rg_manifold(N=100, steps=60):
     plt.close()
 
 if __name__ == "__main__":
-    print("--- Initializing Master Visualization Pipeline for Unified Expansion Manuscript ---")
+    print("--- Initializing Master Image Asset Pipeline ---")
     make_figure_1_cosmic_timeline()
     print("[1/3 Complete]: Outputted 'dynamic_cosmic_timeline_evolution.png'")
     make_figure_2_thermodynamic_stability()
